@@ -34,7 +34,7 @@ for i in range(len(library)):
                 pass
 
     except HTTPError as e:
-        if e.response.status_code == '403' or '503':
+        if e.response.status_code == 403 or 503:
             sleep(1)
             print('\n Downloading {}'.format(songname))
             urllib.request.urlretrieve(url, filename)

@@ -1,11 +1,23 @@
 import os.path
+import sys
 import urllib.request
+import re
 import progressbar
 from urllib.error import HTTPError
 from gmusicapi import Mobileclient
 from time import sleep
 
 api = Mobileclient()
+
+mail = sys.argv[1]
+psw = sys.argv[2]
+device_id = sys.argv[3]
+
+print('/full/path/to/music/ / at the end required')
+path = input()
+
+
+
 login = api.login(mail, psw, device_id)
 library = api.get_all_songs()
 p_iter = -100/len(library)
@@ -14,7 +26,7 @@ bar = progressbar.ProgressBar().start()
 for i in range(len(library)):
     sleep(0.2)
 
-    filename = '/Your/Path/{}{}{}.mp3'.format(
+    filename = '{}{}{}{}.mp3'.format(path,
         library[i].get('artist'), '-', library[i].get('title'))
     songname = library[i].get('artist') + '-' + library[i].get('title')
     p_iter = p_iter + 100/len(library)

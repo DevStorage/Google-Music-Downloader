@@ -17,7 +17,6 @@ print('/full/path/to/music/ / at the end required')
 path = input()
 
 
-
 login = api.login(mail, psw, device_id)
 library = api.get_all_songs()
 p_iter = -100/len(library)
@@ -27,7 +26,7 @@ for i in range(len(library)):
     sleep(0.2)
 
     filename = '{}{}{}{}.mp3'.format(path,
-        library[i].get('artist'), '-', library[i].get('title'))
+                                     library[i].get('artist'), '-', library[i].get('title'))
     songname = library[i].get('artist') + '-' + library[i].get('title')
     p_iter = p_iter + 100/len(library)
 

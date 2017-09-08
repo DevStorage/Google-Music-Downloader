@@ -24,7 +24,7 @@ bar = progressbar.ProgressBar().start()
 for i in range(len(library)):
     sleep(0.2)
 
-    filename = '{}{}{}{}.mp3'.format(path,
+    filename = '{}{}{}{}'.format(path,
                                      library[i].get('artist'), '-', library[i].get('title'))
     songname = library[i].get('artist') + '-' + library[i].get('title')
     p_iter = p_iter + 100/len(library)

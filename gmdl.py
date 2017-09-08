@@ -16,7 +16,6 @@ device_id = sys.argv[3]
 print('/full/path/to/music/ / at the end required')
 path = input()
 
-
 login = api.login(mail, psw, device_id)
 library = api.get_all_songs()
 p_iter = -100/len(library)
